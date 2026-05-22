@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 22:11:22 by clouden           #+#    #+#             */
-/*   Updated: 2026/05/21 19:44:44 by clouden          ###   ########.fr       */
+/*   Updated: 2026/05/21 21:12:12 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 class ClapTrap
 {
-private:
-	std::string	name_;
+protected:
+	std::string		name_;
 	unsigned int	hitPoints_;
 	unsigned int	energyPoints_;
 	unsigned int	attackDamage_;
@@ -29,6 +29,7 @@ public:
 	~ClapTrap(void);
 
 	unsigned int	getHitPoints();
+	unsigned int	getAttackDamage();
 	void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);

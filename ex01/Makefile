@@ -6,7 +6,7 @@
 #    By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/20 22:00:36 by clouden           #+#    #+#              #
-#    Updated: 2026/05/21 14:03:34 by clouden          ###   ########.fr        #
+#    Updated: 2026/05/21 21:06:46 by clouden          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,12 @@ CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 NAME		=	claptrap
 
 SRCS		=	main.cpp \
-				ClapTrap.cpp
+				ClapTrap.cpp \
+				ScavTrap.cpp
 
 OBJS		=	$(SRCS:%.cpp=%.o)
-INCL		=	ClapTrap.hpp
+INCL		=	ClapTrap.hpp \
+				ScavTrap.hpp
 
 all: $(NAME)
 

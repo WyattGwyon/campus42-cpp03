@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 22:30:28 by clouden           #+#    #+#             */
-/*   Updated: 2026/05/22 19:12:58 by clouden          ###   ########.fr       */
+/*   Updated: 2026/05/22 14:37:53 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap(const std::string& name) :
 	energyPoints_(10),
 	attackDamage_(0)
 {
-	std::cout << "Default constructor called.\n";
+	std::cout << "ClapTrap Default Constructor called.\n";
 }
 
 /*********************
@@ -33,7 +33,7 @@ ClapTrap::ClapTrap(const ClapTrap& clap) :
 	energyPoints_(10),
 	attackDamage_(0)
 {
-	std::cout << "Copy constructor called.\n";
+	std::cout << "ClapTrap Copy Constructor called.\n";
 }
 
 /*****************************
@@ -56,7 +56,7 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap& clap)
  **************/
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Deconstructor called.\n";
+	std::cout << "ClapTrap Deconstructor called.\n";
 }
 
 /************
@@ -68,11 +68,17 @@ unsigned int	ClapTrap::getHitPoints()
 	return (hitPoints_);
 }
 
+unsigned int	ClapTrap::getAttackDamage()
+{
+	return (attackDamage_);
+}
+
 void	ClapTrap::attack(const std::string& target)
 {
-	std::cout	<< name_ << " attacks "
-				<< target << " causing "
-				<< attackDamage_ << " damage!"
+	std::cout	<< "ClapTrap " << name_
+				<< " attacks " << target
+				<< " causing " << attackDamage_
+				<< " damage!"
 				<< std::endl;
 	energyPoints_ -= 1;
 }

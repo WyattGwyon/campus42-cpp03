@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/21 13:32:35 by clouden           #+#    #+#             */
-/*   Updated: 2026/05/21 18:42:33 by clouden          ###   ########.fr       */
+/*   Created: 2026/05/21 18:51:26 by clouden           #+#    #+#             */
+/*   Updated: 2026/05/21 21:27:38 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+# include "ClapTrap.hpp"
 
-int	main(void)
+class ScavTrap : public ClapTrap
 {
-	ClapTrap	crag("The Cragheart");
+public:
+	ScavTrap(const std::string& name);
+	ScavTrap(const ScavTrap& scav);
+	ScavTrap	&operator=(const ScavTrap& scav);
+	~ScavTrap(void);
 
-	crag.attack("himself");
-	crag.takeDamage(0);
-	crag.beRepaired(1);
-}
+	void	attack(const std::string& target);
+	void	guardGate();
+};
+
+#endif
