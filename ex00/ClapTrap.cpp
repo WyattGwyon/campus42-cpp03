@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 22:30:28 by clouden           #+#    #+#             */
-/*   Updated: 2026/05/22 19:12:58 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/02 19:16:38 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,10 @@ unsigned int	ClapTrap::getHitPoints()
 
 void	ClapTrap::attack(const std::string& target)
 {
-	std::cout	<< name_ << " attacks "
-				<< target << " causing "
-				<< attackDamage_ << " damage!"
-				<< std::endl;
+	std::cout	<< "ClapTrap " << name_ 
+				<< " attacks " << target 
+				<< " causing " << attackDamage_ 
+				<< " damage!" << std::endl;
 	energyPoints_ -= 1;
 }
 

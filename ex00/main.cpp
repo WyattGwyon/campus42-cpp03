@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 13:32:35 by clouden           #+#    #+#             */
-/*   Updated: 2026/05/21 18:42:33 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/02 19:17:51 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 int	main(void)
 {
 	ClapTrap	crag("The Cragheart");
+	ClapTrap	inox("The Inox Scoundrel");
 
-	crag.attack("himself");
-	crag.takeDamage(0);
-	crag.beRepaired(1);
+	crag.attack("The Inox Scoundrel");
+	inox.takeDamage(0);
+	inox.beRepaired(1);
 }
