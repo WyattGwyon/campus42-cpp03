@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 19:39:34 by clouden           #+#    #+#             */
-/*   Updated: 2026/06/02 19:39:26 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/02 21:10:18 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,19 @@ ScavTrap::~ScavTrap(void)
  ************/
 void	ScavTrap::attack(const std::string& target)
 {
-	std::cout	<< "ScavTrap " << name_
-				<< " attacks " << target
-				<< " causing " << attackDamage_
-				<< " damage!"
-				<< std::endl;
-	energyPoints_ -= 1;
+	if (energyPoints_ > 0)
+	{
+		std::cout	<< "ScavTrap " << name_
+					<< " attacks " << target
+					<< " causing " << attackDamage_
+					<< " damage!"
+					<< std::endl;
+		energyPoints_ -= 1;
+	}
+	else 
+	{
+		std::cout << "ScavTrap tired ...needs sleepy time." << std::endl;
+	}
 }
 
 void	ScavTrap::guardGate()
