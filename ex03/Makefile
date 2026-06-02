@@ -6,25 +6,26 @@
 #    By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/20 22:00:36 by clouden           #+#    #+#              #
-#    Updated: 2026/05/23 17:56:00 by clouden          ###   ########.fr        #
+#    Updated: 2026/06/02 21:45:15 by clouden          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-NAME		=	claptrap
+NAME		=	diamondtrap
 
 SRCS		=	main.cpp \
 				ClapTrap.cpp \
 				ScavTrap.cpp \
 				FragTrap.cpp \
-				DiamonTrap.cpp 
+				DiamondTrap.cpp 
 
 OBJS		=	$(SRCS:%.cpp=%.o)
 INCL		=	ClapTrap.hpp \
-				ScavTrap.hpp
-				FragTrap.hpp
+				ScavTrap.hpp \
+				FragTrap.hpp \
+				DiamondTrap.hpp
 
 all: $(NAME)
 

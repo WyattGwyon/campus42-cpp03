@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 17:54:00 by clouden           #+#    #+#             */
-/*   Updated: 2026/05/24 21:24:01 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/02 22:03:55 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ DiamondTrap::DiamondTrap() :
 
 DiamondTrap::DiamondTrap(const std::string& name) :
 	ClapTrap(name + "_clap_name"),
-	FragTrap(name),
-	ScavTrap(name),
 	name_(name)
 {
 	hitPoints_ = FragTrap::hitPoints_;
@@ -38,8 +36,6 @@ DiamondTrap::DiamondTrap(const std::string& name) :
  *********************/
 DiamondTrap::DiamondTrap(const DiamondTrap& diam) :
 	ClapTrap(diam.name_ + "clap_trap"),
-	ScavTrap(diam.name_),
-	FragTrap(diam.name_),
 	name_(diam.name_)
 {
 	hitPoints_ = FragTrap::hitPoints_;
@@ -51,7 +47,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap& diam) :
 /*****************************
  *  Copy Assignment Operator
  *****************************/
-DiamondTrap	&DiamondTrap::operator=(const DiamondTrap)
+DiamondTrap	&DiamondTrap::operator=(const DiamondTrap& diam)
 {
 	if (this != &diam)
 	{
@@ -77,7 +73,7 @@ DiamondTrap::~DiamondTrap(void)
 void	DiamondTrap::attack(const std::string& target)
 {
 	std::cout << "DiamondTrap disguised as...\n";
-	ScavTrap.attack(target);
+	ScavTrap::attack(target);
 }
 
 void	DiamondTrap::whoami()

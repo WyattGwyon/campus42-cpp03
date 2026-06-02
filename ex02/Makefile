@@ -6,14 +6,14 @@
 #    By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/20 22:00:36 by clouden           #+#    #+#              #
-#    Updated: 2026/05/23 09:45:07 by clouden          ###   ########.fr        #
+#    Updated: 2026/06/02 21:39:32 by clouden          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-NAME		=	claptrap
+NAME		=	fragtrap
 
 SRCS		=	main.cpp \
 				ClapTrap.cpp \
