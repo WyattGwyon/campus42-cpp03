@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 13:32:35 by clouden           #+#    #+#             */
-/*   Updated: 2026/06/02 19:17:51 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/02 19:59:15 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 int	main(void)
 {
-	ClapTrap	crag("The Cragheart");
-	ClapTrap	inox("The Inox Scoundrel");
+	ClapTrap	crag("the Cragheart");
+	ClapTrap	inox("the Inox Scoundrel");
 
-	crag.attack("The Inox Scoundrel");
-	inox.takeDamage(0);
-	inox.beRepaired(1);
+	if (crag.getEnergyPoints() > 0)
+	{
+		crag.attack("the Inox Scoundrel");
+		inox.takeDamage(0);
+		inox.beRepaired(1);
+	}
+	else
+		std::cout << "Crag is tired and needs to go to bed." << std::endl;
 }

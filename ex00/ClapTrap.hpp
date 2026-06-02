@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 22:11:22 by clouden           #+#    #+#             */
-/*   Updated: 2026/05/21 19:44:44 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/02 19:59:45 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,11 @@ public:
 	ClapTrap	&operator=(const ClapTrap& clap);
 	~ClapTrap(void);
 
-	unsigned int	getHitPoints();
-	void	attack(const std::string& target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+	unsigned int	getHitPoints() const;
+	void			attack(const std::string& target);
+	void			takeDamage(unsigned int amount);
+	void			beRepaired(unsigned int amount);
+	unsigned int	getEnergyPoints() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 19:39:34 by clouden           #+#    #+#             */
-/*   Updated: 2026/05/21 21:47:03 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/02 19:39:26 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap& scav)
  **************/
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "TrapClap Destrcutor called.\n";
+	std::cout << "ScavTrap Destrcutor called.\n";
 }
 
 /************
