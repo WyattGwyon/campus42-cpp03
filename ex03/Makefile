@@ -6,7 +6,7 @@
 #    By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/20 22:00:36 by clouden           #+#    #+#              #
-#    Updated: 2026/05/23 09:45:07 by clouden          ###   ########.fr        #
+#    Updated: 2026/05/23 17:56:00 by clouden          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,12 @@ NAME		=	claptrap
 SRCS		=	main.cpp \
 				ClapTrap.cpp \
 				ScavTrap.cpp \
-				FragTrap.cpp
+				FragTrap.cpp \
+				DiamonTrap.cpp 
 
 OBJS		=	$(SRCS:%.cpp=%.o)
 INCL		=	ClapTrap.hpp \
-				ScavTrap.hpp \
+				ScavTrap.hpp
 				FragTrap.hpp
 
 all: $(NAME)

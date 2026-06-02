@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 19:24:08 by clouden           #+#    #+#             */
-/*   Updated: 2026/05/23 09:47:13 by clouden          ###   ########.fr       */
+/*   Updated: 2026/05/24 21:14:24 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,22 @@
 /************************
  *  Default Constructor
  ************************/
+FragTrap::FragTrap() :
+	ClapTrap()
+{
+	hitPoints_ = 100;
+	energyPoints_ = 100;
+	attackDamage_ = 20;
+	std::cout << "FragTrap Default Constructor called.\n";
+}
+
 FragTrap::FragTrap(const std::string& name) :
 	ClapTrap(name)
 {
 	hitPoints_ = 100;
 	energyPoints_ = 100;
 	attackDamage_ = 20;
-	std::cout << "FragTrap Default Constructor called.\n";
+	std::cout << "FragTrap Constructor called.\n";
 }
 
 /*********************
@@ -64,15 +73,12 @@ FragTrap::~FragTrap(void)
  ************/
 void	FragTrap::attack(const std::string& target)
 {
-	std::cout	<< "FragTrap " << name_
-				<< " attacks " << target
-				<< " causing " << attackDamage_
-				<< " damage!"
-				<< std::endl;
-	energyPoints_ -= 1;
+	std::cout << "FragTrap takes on new form as....\n";
+	ClapTrap::attack(target);
 }
 
 void	FragTrap::highFivesGuys(void)
 {
 	std::cout << "FragTrap says: \"Hey guys, how bout a HIGH-FIVE!\"\n";
 }
+
