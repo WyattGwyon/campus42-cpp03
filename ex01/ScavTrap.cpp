@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 19:39:34 by clouden           #+#    #+#             */
-/*   Updated: 2026/06/03 15:25:29 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/03 16:26:53 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ScavTrap::ScavTrap() :
 ScavTrap::ScavTrap(const std::string& name) :
 	ClapTrap(name, 100, 50, 20)
 {
-	std::cout << "ScavTrap Default Constructor called.\n";
+	std::cout << "ScavTrap Constructor called.\n";
 }
 /*********************
  *  Copy Constructor
