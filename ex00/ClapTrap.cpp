@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 22:30:28 by clouden           #+#    #+#             */
-/*   Updated: 2026/06/03 14:37:10 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/03 14:45:14 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,15 +147,12 @@ void	ClapTrap::beRepaired(unsigned int amount)
 					<< std::endl;
 		return;
 	}
-	else
-	{
-		hitPoints_ += amount;
-		std::cout	<< "ClapTrap "<< name_
-					<< " heals " << amount
-					<< " health and now has "
-					<< hitPoints_ << " health!"
-					<< std::endl;
-		energyPoints_ -= 1;
-	}
+	hitPoints_ += amount;
+	std::cout	<< "ClapTrap "<< name_
+				<< " heals " << amount
+				<< " health and now has "
+				<< hitPoints_ << " health!"
+				<< std::endl;
+	energyPoints_ -= 1;
 }
 
