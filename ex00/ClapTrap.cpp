@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 22:30:28 by clouden           #+#    #+#             */
-/*   Updated: 2026/06/03 14:32:54 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/03 14:37:10 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap() :
 ClapTrap::ClapTrap(const std::string& name) :
 	name_(name),
 	hitPoints_(10),
-	energyPoints_(0),
+	energyPoints_(10),
 	attackDamage_(0)
 {
 	std::cout << "ClapTrap Constructor called.\n";
