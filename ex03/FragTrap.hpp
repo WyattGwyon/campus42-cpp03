@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 19:23:31 by clouden           #+#    #+#             */
-/*   Updated: 2026/05/24 21:10:05 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/03 17:07:45 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class	FragTrap : virtual public ClapTrap
 public:
 	FragTrap();
 	FragTrap(const std::string& name);
+	FragTrap(const std::string& name, const int hp, const int ep, const int ad);
 	FragTrap(const FragTrap& frag);
 	FragTrap	&operator=(const FragTrap& frag);
 	~FragTrap(void);

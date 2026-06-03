@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 13:32:35 by clouden           #+#    #+#             */
-/*   Updated: 2026/06/03 11:30:46 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/03 17:37:38 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,40 +17,24 @@
 int	main(void)
 {
 	ClapTrap	crag("The Cragheart");
-	ScavTrap	scav("The Inox Shaman");
-	FragTrap	frag("The Valwrath");
-	DiamondTrap	diam("Melkor");
+	ScavTrap	inox("The Inox Shaman");
+	FragTrap	val("The Valwrath");
+	DiamondTrap	mel("Melkor", 0, 0, 0);
 
-	if (crag.getEnergyPoints() > 0 && crag.getHitPoints() > 0)
-	{
-		crag.attack("The Inox Shaman");
-		scav.takeDamage(crag.getAttackDamage());
-	}
-	else
-		std::cout << "The Cragheart is lacks all motivation to lift a finger.\n";
+	std::cout << std::endl;
+	crag.giveDamage(inox);
 	
-	if (scav.getEnergyPoints() > 0 && scav.getHitPoints() > 0)
-	{
-		scav.attack("The Cragheart");
-		crag.takeDamage(scav.getAttackDamage());
-	}
-	else
-		std::cout << "The Inox Shaman is smelling the daisies.\n";
+	std::cout << std::endl;
+	inox.giveDamage(crag);
 
-	if (frag.getEnergyPoints() > 0 && frag.getHitPoints() > 0)
-	{
-		frag.attack("The Inox Shaman");
-		scav.takeDamage(frag.getAttackDamage());
-	}
-	else
-		std::cout << "The Valwrath is in Valhalla.\n";
+	std::cout << std::endl;
+	val.giveDamage(inox);
 
-	if (diam.getEnergyPoints() > 0 && diam.getHitPoints() > 0)
-	{
-		diam.whoami();
-		diam.attack("The Valwrath");
-		frag.takeDamage(diam.getAttackDamage());
-	}
-	else
-		std::cout << "Melkor does care anymore.\n";
+	std::cout << std::endl;
+	mel.whoami();
+	mel.giveDamage(val);
+	std::cout << "Diamond Melkor hitPoints: " << mel.getHitPoints() << std::endl;
+	std::cout << "Diamond Melkor energyPoints: " << mel.getEnergyPoints() << std::endl;
+	std::cout << "Diamond Melkor attackDamage: " << mel.getAttackDamage() << std::endl;
+	std::cout << std::endl;
 }
