@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 22:11:22 by clouden           #+#    #+#             */
-/*   Updated: 2026/06/03 14:22:44 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/03 15:05:22 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ protected:
 public:
 	ClapTrap();
 	ClapTrap(const std::string& name);
+	ClapTrap(const std::string& name, const int hp, const int ep, const int ad);
 	ClapTrap(const ClapTrap& clap);
 	ClapTrap	&operator=(const ClapTrap& clap);
 	~ClapTrap(void);
