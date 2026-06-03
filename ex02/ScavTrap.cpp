@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 19:39:34 by clouden           #+#    #+#             */
-/*   Updated: 2026/06/03 16:26:37 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/03 16:56:06 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ ScavTrap::ScavTrap() :
 
 ScavTrap::ScavTrap(const std::string& name) :
 	ClapTrap(name, 100, 50, 20)
+{
+	std::cout << "ScavTrap Constructor called.\n";
+}
+
+ScavTrap::ScavTrap(const std::string& name, const int hp, const int ep, const int ad)
+	: ClapTrap(name, hp, ep, ad)
 {
 	std::cout << "ScavTrap Constructor called.\n";
 }
@@ -73,14 +79,14 @@ void	ScavTrap::attack(const std::string& target)
 
 void	ScavTrap::guardGate()
 {
-	if (energyPoints_ <= 0)
-	{
-		std::cout << "ScavTrap " << name_ << " is tired and sleeps through the watch.\n";
-		return;
-	}
 	if (hitPoints_ <= 0)
 	{
 		std::cout << "ScavTrap " << name_ << "'s lifeless body cannot be bother to guard anything.\n";
+		return;
+	}
+	if (energyPoints_ <= 0)
+	{
+		std::cout << "ScavTrap " << name_ << " is tired and sleeps through the watch.\n";
 		return;
 	}
 	std::cout	<< "ScavTrap " << name_
