@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 17:54:00 by clouden           #+#    #+#             */
-/*   Updated: 2026/06/02 22:03:55 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/03 12:02:05 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ DiamondTrap::DiamondTrap() :
 
 DiamondTrap::DiamondTrap(const std::string& name) :
 	ClapTrap(name + "_clap_name"),
+	ScavTrap(),
+	FragTrap(),
 	name_(name)
 {
 	hitPoints_ = FragTrap::hitPoints_;
@@ -36,6 +38,8 @@ DiamondTrap::DiamondTrap(const std::string& name) :
  *********************/
 DiamondTrap::DiamondTrap(const DiamondTrap& diam) :
 	ClapTrap(diam.name_ + "clap_trap"),
+	ScavTrap(),
+	FragTrap(),
 	name_(diam.name_)
 {
 	hitPoints_ = FragTrap::hitPoints_;

@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 13:32:35 by clouden           #+#    #+#             */
-/*   Updated: 2026/06/02 22:07:16 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/03 11:30:46 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,36 @@ int	main(void)
 	FragTrap	frag("The Valwrath");
 	DiamondTrap	diam("Melkor");
 
-	crag.attack("The Inox Shaman");
-	scav.takeDamage(crag.getAttackDamage());
-	crag.beRepaired(1);
+	if (crag.getEnergyPoints() > 0 && crag.getHitPoints() > 0)
+	{
+		crag.attack("The Inox Shaman");
+		scav.takeDamage(crag.getAttackDamage());
+	}
+	else
+		std::cout << "The Cragheart is lacks all motivation to lift a finger.\n";
 	
-	scav.attack("The Cragheart");
-	crag.takeDamage(scav.getAttackDamage());
-	scav.beRepaired(1);
-	scav.guardGate();
+	if (scav.getEnergyPoints() > 0 && scav.getHitPoints() > 0)
+	{
+		scav.attack("The Cragheart");
+		crag.takeDamage(scav.getAttackDamage());
+	}
+	else
+		std::cout << "The Inox Shaman is smelling the daisies.\n";
 
-	frag.attack("The Inox Shaman");
-	scav.takeDamage(frag.getAttackDamage());
-	frag.beRepaired(1);
-	frag.highFivesGuys();
+	if (frag.getEnergyPoints() > 0 && frag.getHitPoints() > 0)
+	{
+		frag.attack("The Inox Shaman");
+		scav.takeDamage(frag.getAttackDamage());
+	}
+	else
+		std::cout << "The Valwrath is in Valhalla.\n";
 
-	diam.whoami();
-	diam.attack("The Valwrath");
-	frag.takeDamage(diam.getAttackDamage());
+	if (diam.getEnergyPoints() > 0 && diam.getHitPoints() > 0)
+	{
+		diam.whoami();
+		diam.attack("The Valwrath");
+		frag.takeDamage(diam.getAttackDamage());
+	}
+	else
+		std::cout << "Melkor does care anymore.\n";
 }

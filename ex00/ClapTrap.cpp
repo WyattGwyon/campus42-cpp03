@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 22:30:28 by clouden           #+#    #+#             */
-/*   Updated: 2026/06/02 21:52:02 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/03 12:53:51 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ unsigned int	ClapTrap::getAttackDamage() const
 	return (attackDamage_);
 }
 
-unsigned int		ClapTrap::getEnergyPoints() const
+unsigned int	ClapTrap::getEnergyPoints() const
 {
 	return (energyPoints_);
 }
