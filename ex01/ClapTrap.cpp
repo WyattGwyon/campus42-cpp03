@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 22:30:28 by clouden           #+#    #+#             */
-/*   Updated: 2026/06/02 21:53:21 by clouden          ###   ########.fr       */
+/*   Updated: 2026/06/03 13:59:48 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ ClapTrap::ClapTrap(const ClapTrap& clap) :
 	energyPoints_(10),
 	attackDamage_(0)
 {
-	std::cout << "ClapTrap Copy Constructor called.\n";
+	std::cout << "ClapTrap Copy constructor called.\n";
 }
 
 /*****************************
@@ -71,6 +71,11 @@ ClapTrap::~ClapTrap(void)
 /************
  *  Methods
  ************/
+unsigned int	ClapTrap::getName() const
+{
+	return (name_);
+}
+
 unsigned int	ClapTrap::getHitPoints() const
 {
 	return (hitPoints_);
@@ -81,21 +86,32 @@ unsigned int	ClapTrap::getAttackDamage() const
 	return (attackDamage_);
 }
 
+unsigned int	ClapTrap::getEnergyPoints() const
+{
+	return (energyPoints_);
+}
+
 void	ClapTrap::attack(const std::string& target)
 {
-	if (energyPoints_ > 0)
+	if (hitPoints_ <= 0)
+	{
+		std::cout	<< "ClapTrap " << name_
+					<< "is dead and cannot attack and must rest in pease."
+					<< std::endl;
+	}
+	if (energyPoints_ <= 0)
+	{
+		std::cout	<< "ClapTrap " << name_
+					<< "is exhausted and cannot attack and must rest."
+					<< std::endl;
+	}
+	else
 	{
 		std::cout	<< "ClapTrap " << name_
 					<< " attacks " << target
 					<< " causing " << attackDamage_
 					<< " damage!" << std::endl;
 		energyPoints_ -= 1;
-	}
-	else
-	{
-		std::cout	<< name_
-					<< "is exhausted and cannot attack and must rest."
-					<< std::endl;
 	}
 }
 
@@ -104,7 +120,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (amount > hitPoints_)
 		amount = hitPoints_;
 	hitPoints_ -= amount;
-	std::cout	<< name_	
+	std::cout	<< "ClapTrap " << name_	
 				<< "'s health drops to "
 				<< hitPoints_
 				<< "!" << std::endl;
@@ -112,25 +128,27 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (energyPoints_ > 0)
+	if (hitPoints_ <= 0)
+	{
+		std::cout	<< "ClapTrap " << name_
+					<< "is dead and cannot heal and must rest in peace."
+					<< std::endl;
+	}
+	if (energyPoints_ <= 0)
+	{
+		std::cout	<< "ClapTrap " << name_
+					<< "is exhausted and cannot heal and must rest."
+					<< std::endl;
+	}
+	else
 	{
 		hitPoints_ += amount;
-		std::cout	<< name_
+		std::cout	<< "ClapTrap "<< name_
 					<< " heals " << amount
 					<< " health and now has "
 					<< hitPoints_ << " health!"
 					<< std::endl;
 		energyPoints_ -= 1;
 	}
-	else
-	{
-		std::cout	<< name_
-					<< "is exhausted and cannot heal and must rest."
-					<< std::endl;
-	}
 }
 
-unsigned int		ClapTrap::getEnergyPoints() const
-{
-	return (energyPoints_);
-}
